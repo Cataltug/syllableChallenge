@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dissyllable Challenge</title>
+</head>
+<body>
+    <h1>Dissyllable Challenge</h1>
+    <Script>
+        function dissyllable(word){
+            let vowels = "aeıioöuüAEIİOÖUÜ"; // Defines a string containing all vowels
+            let result = ""; // Initialize an empty string to store the result
+
+            for(let i = 0; i < word.length; i++){    // Loop for each character of the word
+
+                result += word[i]; // Add the current character to the result string
+                if(vowels.includes(word[i]) && i !== word.length -1){// If the character is a vowel and it's not the last character in the word then add "-" to indicate a syllable break
+                    result += "-";
+                }
+            }
+
+            return result.split("-"); // Split the result string by "-" to separate the syllables, return the syllables as an array
+        }
+
+        console.log(dissyllable("duygu"));
+        console.log(dissyllable("merhaba"));
+        console.log(dissyllable("kitap"));   
+        console.log(dissyllable("okul"));   
+    </Script>
+
+</body>
+</html>
